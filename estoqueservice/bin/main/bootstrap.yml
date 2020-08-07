@@ -1,0 +1,13 @@
+spring:
+   application:
+      name:
+         estoqueservice
+   cloud:
+      config:
+         uri: ${CONFIG_SERVER:#{http//localhost:8080}}
+         failFast: true
+         retry:
+            initialInterval: 3000
+            multiplier: 1.3
+            maxInterval: 5000
+            maxAttempts: 200000
